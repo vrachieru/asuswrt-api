@@ -50,6 +50,17 @@ class AsusWRT:
 
         self._asus_token_timestamp = datetime.now()
 
+    def logout(self):
+        '''
+        Logout
+        '''
+        response = self.request(
+            'GET',
+            '/Logout.asp'
+        )
+
+        self._session = requests.Session()
+
     def get_sys_info(self):
         '''
         Get system information
